@@ -1,0 +1,12 @@
+Scaleable Chat System 
+
+Suppose we have a server(socket.io) 1 and that server is serving the 3 users at a time. 
+so the next time another 4th user comes so the server(socket.io) 2 spin up into horizontal scale.
+
+But here the problem start the 3 of user can not communicate or send messages with the 4th user becuase of the another server is serving to them and they have different connection with the server so this is the main problem with sockets that they are not Scaleable.
+
+So we running up the redis server on Aiven and we use a Pub/Sub model/architecture so that user 1 can message the user 4 with the intermediate mechanism.
+
+TurboRepo :- It is a great tool to manage the monorepo project, basically monorepo means we can make our backend, frontend and other libraries and modules in the same repository or directory which is managed by the turborepo in our case.
+
+Through socket.io we can emit the events from server 

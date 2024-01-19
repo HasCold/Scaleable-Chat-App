@@ -1,0 +1,18 @@
+.chat-input{
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.button{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.box{
+    margin: 10px 0 0 10px;
+}

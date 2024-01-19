@@ -1,0 +1,41 @@
+Initialize the TurboRepo :- npx create-turbo@latest
+
+Install typescript as a workspace 
+npm i typescript --workspace server -D
+
+npm i tsc-watch --workspace server -D
+
+To generate the tsconfig.json file :- tsc --init
+
+
+In my script package.json file : -
+"dev": "tsc-watch --onSuccess \"node dist/index.js\""   -->> // Means first they watch typescript in compile mode and when the compilation gets Success then run the node-server for index.js file    
+
+
+"build": "tsc -p ."   
+
+This script is responsible for manually triggering the TypeScript compilation process to generate the JavaScript code from your TypeScript source files. The -p . flag specifies the path to the TypeScript project, and in this case, it's the current directory (.).
+
+Running this script (npm run build) will compile your TypeScript code based on the tsconfig.json configuration in your project and generate the corresponding JavaScript files in the dist directory.
+
+
+socket.io :- npm i socket.io --workspace server  -->> For server side
+
+socket.io client :- npm i socket.io-client --workspace web  -->> For client side
+
+ioredis :- npm i ioredis --workspace server
+
+
+Setup for Prisma :
+- npm install prisma typescript ts-node @types/node --workspace server --save-dev
+
+- npx prisma init --datasource-provider mysql
+
+- npx prisma generate   // generate all the related prisma code and suggested snippet for doing the queries
+
+-npx prisma migrate dev --name init  OR  npx prisma migrate dev
+
+If you want to run another server into new terminal :- 
+export PORT=8000 && npm start
+
+
