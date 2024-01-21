@@ -1,5 +1,7 @@
 import { Redis } from "ioredis";
 import { Server } from "socket.io";
+import prismaClient from "./prisma";
+import { produceMessage } from "./kafka";
 
 const pub = new Redis({  // Publisher
     host: "redis-28439b0c-ha03330224926-cf45.a.aivencloud.com",
@@ -47,11 +49,13 @@ class SocketService{
             })
         });
 
-        sub.on("message", (channel, message) => {
+        sub.on("message", async (channel, message) => {
             if(channel === "MESSAGES"){
                 console.log("New message from Redis :", message);  // If you want to run another server and test whther the message will recieve on both server you can run this command into new terminal :- export PORT=8000 && npm start
 
                 io.emit("message", message);
+                await produceMessage(message);
+                console.log("Message Produce to Kafka Broker");
             }
         })
     }

@@ -1,5 +1,5 @@
 In RedisInsight Tool which is also a client in the case of Redis Pub/Sub model:- 
 
-Commands :
+CLI Commands in RedisInsight :
 
 SUBSCRIBE MESSAGES

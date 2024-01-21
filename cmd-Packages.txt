@@ -33,7 +33,15 @@ Setup for Prisma :
 
 - npx prisma generate   // generate all the related prisma code and suggested snippet for doing the queries
 
--npx prisma migrate dev --name init  OR  npx prisma migrate dev
+- npx prisma migrate dev --name init  OR  npx prisma migrate dev
+
+- npx prisma studio  // Prisma Studio is a visual editor (UI) for the data in your database. 
+
+
+To interact with Kafka we use Kafkajs :-
+-   npm i kafkajs --workspace server
+Docs :- https://kafka.js.org/docs/producing
+
 
 If you want to run another server into new terminal :- 
 export PORT=8000 && npm start
